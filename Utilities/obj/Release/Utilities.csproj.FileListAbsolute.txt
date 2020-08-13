@@ -1,0 +1,7 @@
+C:\Users\james\OneDrive\Utilities\Utilities\bin\Release\Utilities.dll
+C:\Users\james\OneDrive\Utilities\Utilities\bin\Release\Utilities.pdb
+C:\Users\james\OneDrive\Utilities\Utilities\bin\Release\ExcelDna.Utilities.dll
+C:\Users\james\OneDrive\Utilities\Utilities\obj\Release\Utilities.csprojAssemblyReference.cache
+C:\Users\james\OneDrive\Utilities\Utilities\obj\Release\Utilities.csproj.CopyComplete
+C:\Users\james\OneDrive\Utilities\Utilities\obj\Release\Utilities.dll
+C:\Users\james\OneDrive\Utilities\Utilities\obj\Release\Utilities.pdb

@@ -1,0 +1,10 @@
+C:\Users\jwc\OneDrive\Utilities\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\jwc\OneDrive\Utilities\Utilities\bin\Debug\Utilities.dll
+C:\Users\jwc\OneDrive\Utilities\Utilities\bin\Debug\Utilities.pdb
+C:\Users\jwc\OneDrive\Utilities\Utilities\bin\Debug\ExcelDna.Utilities.dll
+C:\Users\jwc\OneDrive\Utilities\Utilities\obj\Debug\Utilities.csproj.CopyComplete
+C:\Users\jwc\OneDrive\Utilities\Utilities\obj\Debug\Utilities.dll
+C:\Users\jwc\OneDrive\Utilities\Utilities\obj\Debug\Utilities.pdb
+C:\Users\james\OneDrive\Utilities\Utilities\obj\Debug\Utilities.csprojAssemblyReference.cache
+C:\Users\james\OneDrive\Utilities\Utilities\obj\Debug\Utilities.dll
+C:\Users\james\OneDrive\Utilities\Utilities\obj\Debug\Utilities.pdb

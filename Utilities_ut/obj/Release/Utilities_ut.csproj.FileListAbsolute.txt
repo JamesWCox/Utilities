@@ -1,0 +1,15 @@
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Utilities_ut.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Utilities_ut.pdb
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Utilities.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Utilities.pdb
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\james\OneDrive\Utilities\Utilities_ut\bin\Release\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\james\OneDrive\Utilities\Utilities_ut\obj\Release\Utilities_ut.csprojAssemblyReference.cache
+C:\Users\james\OneDrive\Utilities\Utilities_ut\obj\Release\Utilities_ut.csproj.CopyComplete
+C:\Users\james\OneDrive\Utilities\Utilities_ut\obj\Release\Utilities_ut.dll
+C:\Users\james\OneDrive\Utilities\Utilities_ut\obj\Release\Utilities_ut.pdb
