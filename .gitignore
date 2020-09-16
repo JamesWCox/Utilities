@@ -38,3 +38,8 @@ Utilities_ut/obj/Debug/Utilities_ut.csproj.FileListAbsolute.txt
 Utilities_ut/obj/Debug/Utilities_ut.csprojAssemblyReference.cache
 Utilities_ut/obj/Debug/Utilities_ut.dll
 Utilities_ut/obj/Debug/Utilities_ut.pdb
+*.lock
+*.ide
+*.testlog
+*.xll
+*.cache

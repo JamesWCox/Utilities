@@ -13,9 +13,288 @@ using ExcelDna.Utilities;
 
 namespace Utilities
 {
+    public class Utl
+    {
+        static string sAllCharacter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        static string sAllInteger = "0123456789";
+
+        /// <summary>
+        /// Check if the supplied symbol is valid
+        /// Checks: Empty 
+        /// </summary>
+        /// <param name="ticker"></param>
+        /// <returns></returns>
+        public static bool Empty(string symbol)
+        {
+            bool g2g = false;
+            string sym = symbol.Trim();
+
+            g2g = string.IsNullOrWhiteSpace(sym);
+            return g2g;
+        }
+
+        /*
+         * This function can and wiil be called from within the 'isOption' function to determine if a provided ticker is a FOP
+         */
+        public static bool firstCharIs(string str, char exp)
+        {
+            // First, do length check 
+            return (str.Trim().Length > 0 && str.Trim()[0] == exp);
+        }
+
+        public static bool startsWith(string str, string pfx)
+        {
+            return str.StartsWith(pfx);
+        }
+
+
+        public static int pos_first_alpha(string sym)
+        {
+            int idx = -1;
+            char ch;
+            for(int i = 0; i < sym.Length; i++)
+            {
+                ch = sym[i];                 
+                if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) { 
+                    idx = i;
+                    break;
+                }
+            }
+            return idx;
+        }
+
+
+        public static int pos_last_alpha(string sym)
+        {
+            int idx = -1;
+            char ch;
+            for (int i = sym.Length - 1; i >= 0; i--)
+            {
+                ch = sym[i];
+                if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+                {
+                    idx = i;
+                    break;
+                }
+            }
+            return idx;
+        }
+
+        public static int pos_first_num(string sym)
+        {
+            int idx = -1;
+            char ch;
+            for (int i = 0; i < sym.Length; i++)
+            {
+                ch = sym[i];
+                if (Char.IsDigit(ch)) 
+                {
+                    idx = i;
+                    break;
+                }
+            }
+            return idx;
+        }
+
+
+        public static int pos_last_num(string sym)
+        {
+            int idx = -1;
+            char ch;
+            for (int i = sym.Length - 1; i >= 0; i--)
+            {
+                ch = sym[i];
+                if (Char.IsDigit(ch))
+                {
+                    idx = i;
+                    break;
+                }
+            }
+            return idx;
+        }
+
+        /// <summary>
+        /// 
+        /// TODO: handle FOPs 
+        /// </summary>
+        /// <param name="sym"></param>
+        /// <returns></returns>
+        public static string symbol(string sym)
+        {
+            string str = "";
+            int idx1 = Utl.pos_first_alpha(sym);
+            int idx2 = Utl.pos_first_num(sym);
+
+            if(idx2 == -1 && sym.Length < 6)
+            {
+                idx2 = Utl.pos_last_alpha(sym) + 1;
+            }
+
+            if (sym.Length > 0 && idx1 != -1 && idx1 != -1)
+            {
+                str = sym.Substring(idx1, idx2 - idx1);
+            }
+            return str;
+        }
+
+
+    } // End class Utl 
+
+
+    public class TOS
+    {
+
+    } // end class TOS 
+    public class opt
+    {
+        /*
+        Futures
+        Delivery month  Letter
+        January         F
+        February        G
+        March           H
+        April           J
+        May             K
+        June            M
+        July            N
+        August          Q
+        September       U
+        October         V
+        November        X
+        December        Z
+        */ 
+
+
+        /*
+        Options
+        Delivery month
+                    Call Put 
+        January	    A	M
+        February	B	N
+        March	    C	O
+        April	    D	P
+        May	        E	Q
+        June	    F	R
+        July	    G	S
+        August	    H	T
+        September	I	U
+        October	    J	V
+        November	K	W
+        December	L	X
+        */
+
+        public static char futureCode(string sym)
+        {
+            return '-';
+        }
+        public static char optionCode(string sym)
+        {
+            return '-';
+        }
+
+        /// <summary>
+        /// borked 
+        /// </summary>
+        /// <param name="sym"></param>
+        /// <returns></returns>
+        public static DateTime getDate(string sym)
+        {
+            /*
+            Dim first_num, last_alpha As Integer
+            Dim dateStr As String
+
+            first_num = pos_first_num(sym)
+            last_alpha = pos_last_alpha(sym)
+            dateStr = Mid(sym, first_num, last_alpha - first_num)
+
+            Dim year, mo, day As String
+
+            year = "20" & Mid(dateStr, 1, 2)
+            mo = Mid(dateStr, 3, 2)
+            day = Mid(dateStr, 5, 2)
+
+            getDate = year & "/" & mo & "/" & day 
+             */
+            string dateStr = opt.exDateStr(sym);
+            int yr = Int32.Parse(dateStr.Substring(0, 2));
+            int mo = Int32.Parse(dateStr.Substring(2, 2));
+            int da = Int32.Parse(dateStr.Substring(4, 2));
+
+            return new DateTime(yr, mo, da);
+        }
+
+        public static double divYieldAsDouble(string sym)
+        {
+            /*
+            Dim yieldStr As String
+            yieldStr = GetTOS(sym, "YIELD")
+            yieldStr = Left(yieldStr, Len(sym))
+
+            divYieldAsDouble = yieldStr / 100
+             */
+            return 0.0;
+        }
+
+        /// <summary>
+        /// 
+        /// Does not currently support FOPs 
+        /// </summary>
+        /// <param name="sym"></param>
+        /// <returns></returns>
+        public static string exDateStr(string sym)
+        {
+            string str = "";
+            int idx1 = Utl.pos_first_num(sym);
+            int idx2 = Utl.pos_last_alpha(sym);
+
+
+
+            if (sym.Length > 0 && idx1 != -1 && idx1 != -1)
+            {
+                str = sym.Substring(idx1, idx2 - idx1);
+            }
+
+            return str; 
+        }
+
+
+        public static double strike(string sym)
+        {
+            double strk = 0.0;
+            int idx1 = Utl.pos_last_alpha(sym);
+
+            if (sym.Length > 6)
+            {
+                strk = Double.Parse(sym.Substring(idx1 + 1));
+            }
+            return strk; 
+        }
+
+
+        public static int multiplier(string sym)
+        {
+            int amt = 0;
+
+            // FOP
+            if (Utl.startsWith(sym, "./"))
+            {
+                amt = 50;
+            } 
+            else if (Utl.startsWith(sym, "."))
+            {
+                amt = 100;
+            } 
+            else
+            {
+                amt = 1;
+            }
+            return amt;
+        }
+    } // end class opt 
 
 
     public class Basic
+
     {
         [ExcelFunction()]
         public static void generateCover()
@@ -122,7 +401,6 @@ namespace Utilities
             {"Yield"                   , "Yield"}
         };
 #endregion
-
 
 
         public static double[,] Func( double x, double y)
